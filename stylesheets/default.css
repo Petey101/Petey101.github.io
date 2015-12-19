@@ -1,4 +1,12 @@
-*{
-	background-color:7A88FF;
-	color:C6CCFF;
+html{
+	background-color:rgb(122, 136, 255);
+	color:rgb(198, 204, 255);
+}
+ul{
+	    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    display: inline;
 }
