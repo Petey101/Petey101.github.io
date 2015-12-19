@@ -1,0 +1,19 @@
+h1{ 
+text-align:center;
+}
+h2{ 
+text-align:center;
+}
+h4{ 
+text-align:center;
+}
+.back{
+	position:fixed;
+	left:5em;
+	bottom:10em;
+}
+.next{
+	position:fixed;
+	right:5em;
+	bottom:10em;
+}
