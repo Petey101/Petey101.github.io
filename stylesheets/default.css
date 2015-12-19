@@ -1,5 +1,4 @@
 html{
-<<<<<<< HEAD
 	background-color:rgb(122, 136, 255);
 	color:rgb(198, 204, 255);
 }
@@ -10,7 +9,6 @@ ul{
 }
 li {
     display: inline;
-=======
 	background-color:rgb(122,136,255);
 	color:rgb(198,204,255);
 }
@@ -60,6 +58,4 @@ section{
 	position:fixed;
 	bottom:0em;
 	width:100%;
-
->>>>>>> origin/master
 }
