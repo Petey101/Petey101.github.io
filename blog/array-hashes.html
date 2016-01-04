@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <title>Arrays and Hashes</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">  
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<main>
+    <nav>
+    <ul>
+      <li><a href="https://petey101.github.io/">Home</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+      <ul class="rightnav">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">GitHub</a></li>
+    </ul>
+    </ul>
+   
+  </nav>
+  <h1>Arrays and Hashes</h1>
+  <h2>Whats the difference?</h2>
+  <h4>1/3/2016</h4>
+
+  <section>
+    <p>Happy New Year everyone! I hope everyone is eager to see what new things we can accomplish this year. This week in my DBC phase0 module, we learned about Arrays and Hashes in Ruby. These two collections of elements are used in Ruby to store objects, but they do it in different ways. Today we are going to discuss the differences between them.
+  
+    </p>
+    <p>First off, we will talk about what arrays and hashes are. From <a href="http://ruby-doc.org/ "> Ruby docs</a>, the definition of an array is an" ordered, integer-indexed collections of any object. Array indexing starts at 0, as in C or Java. A negative index is assumed to be relative to the end of the array—that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array, and so on.". The definition of a hash is "a collection of key-value pairs. It is similar to an Array, except that indexing is done via arbitrary keys of any object type, not an integer index. Hashes enumerate their values in the order that the corresponding keys were inserted.". 
+       
+    </p>
+
+    <p>Now these definitions might not make much sense at first, but we will explain in another way that might be simpler to understand. The main difference between arrays and hashes is the way they are indexed. In order to access a specific element of an array, you use the integer associated with the placement of the element in the array. The example given above states that the first element would be given the index of 0 and the second would be given the index of 1. You can also use negative integers to access the end of the array, with the example from above stating that an index of -1 would point to the last element of an array. For hashes, you would need to use the keys to access the value they are associated with. 
+    For example if a hash was created about kids favorite colors, 
+    <script src="https://gist.github.com/Petey101/2de8a5278a991f7b5db8.js"></script>
+      you can find out the favorite colors of these kids by using colors["John"] and it will return you with the value "Red". Hope this gives you a general idea of what arrays and hashes are!
+       
+    </p>
+    <div class="back">
+      <a href="#"><span></span>Back</a>
+    </div>
+    <div class="next">
+    <a href="#"><span></span>Next</a>
+  </div>
+
+      <section class="footer">
+  <hr>
+  <h1>Contact Me</h1>
+  <a href="#"><img src="#" alt="Contact Me"></a>
+  </section>
+  </section>
+</main>
