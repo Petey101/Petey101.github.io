@@ -1,0 +1,15 @@
+h1{
+	text-align:center;
+}
+.main {
+	position:relative;
+	display:inline-block;
+    margin: 5px;
+    border: 0px solid #ccc;
+    float:left;
+    width: 25%;
+    left:12.5%;
+}
+p{
+	clear: both;
+}
