@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <title>Your page title here</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">  
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<main>
+    <nav>
+    <ul>
+      <li><a href="https://petey101.github.io/">Home</a></li>
+      <li><a href="https://petey101.github.io/about.html">About Me</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="https://petey101.github.io/blog/index.html">Blog</a></li>
+      <li><a href="https://petey101.github.io/contact.html">Contact</a></li>
+      <ul class="rightnav">
+      <li><a href="https://www.linkedin.com/in/peter-leong-47463310b">LinkedIn</a></li>
+      <li><a href="https://twitter.com/Pleong101Peter">Twitter</a></li>
+      <li><a href="https://github.com/Petey101">GitHub</a></li>
+    </ul>
+    </ul>
+   
+  </nav>
+  <h1>Ruby Classes</h1>
+  <h2>What are They?</h2>
+  <h4>1/17/2016</h4>
+
+  <section>
+    <p> Today we're going to talk a little about classes. Classes are objects in Ruby that can contain multiple methods all under one name. I created a simple calculator class here.
+      <script src="https://gist.github.com/Petey101/faeb54dee8b628fe245f.js"></script>
+  
+    </p>
+    <p> In the beginning method, we take two variables x and y and make them equal to @var1 and @var2. These are isntance variables that allow them to be used anywhere in the class. This class named calculator can be called upon with the name of the variable you want using the variable = to the class.new(with any variable required here). An example would be numbers = Calculator.new(4,2). Now you can call any of the methods under the calculator class for the numbers variable and it will return you an answer relative to the variable it has received. If you were to call the add method on numbers, you would use numbers.add and it would return 6. All of the methods can be used that way.
+       
+    </p>
+    <p>Another special thing about class are isntance methods. In the doublesum method we call upon the add method and double the value the add method returns. Using classes allows us to use what other methods return in other places as a way to simplify things. Classes are a very useful organization tool allowing us to group together methods that have similar purposes under one "roof". For more information on Ruby Classes, <a href="http://www.tutorialspoint.com/ruby/ruby_classes.htm">http://www.tutorialspoint.com/ruby/ruby_classes.htm</a> has some more.
+       
+    </p>
+    <div class="back">
+      <a href="#"><span></span>Back</a>
+    </div>
+    <div class="next">
+    <a href="#"><span></span>Next</a>
+  </div>
+
+      <section class="footer">
+  <hr>
+  <a href="https://petey101.github.io/contact.html">Contact Me</a>
+  </section>
+  </section>
+</main>
