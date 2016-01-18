@@ -48,7 +48,7 @@ section{
 }	
 .footer{
 	text-align:center;
-	position:fixed;
+	position:relative;
 	bottom:0em;
 	width:100%;
 }

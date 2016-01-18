@@ -8,12 +8,19 @@ h4{
 text-align:center;
 }
 .back{
-	position:fixed;
+	float:left;
+	display:inline-block;
+	position:relative;
 	left:5em;
-	bottom:5em;
+	bottom:2.5em;
 }
 .next{
-	position:fixed;
+	float:right;
+	display:inline-block;
+	position:relative;
 	right:5em;
-	bottom:5em;
+	bottom:2.5em;
+}
+p{
+	margin:3em;
 }
