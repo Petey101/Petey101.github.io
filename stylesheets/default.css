@@ -47,6 +47,7 @@ section{
 	text-align:center;
 }	
 .footer{
+	clear:both;
 	text-align:center;
 	position:relative;
 	bottom:0em;
