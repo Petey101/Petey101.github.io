@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+  <title>Your page title here</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">  
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/blog.css">
+</head>
+
+<main>
+    <nav>
+    <ul>
+      <li><a href="https://petey101.github.io/">Home</a></li>
+      <li><a href="https://petey101.github.io/about.html">About Me</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="https://petey101.github.io/blog/index.html">Blog</a></li>
+      <li><a href="https://petey101.github.io/contact.html">Contact</a></li>
+      <ul class="rightnav">
+      <li><a href="https://www.linkedin.com/in/peter-leong-47463310b">LinkedIn</a></li>
+      <li><a href="https://twitter.com/Pleong101Peter">Twitter</a></li>
+      <li><a href="https://github.com/Petey101">GitHub</a></li>
+    </ul>
+    </ul>
+   
+  </nav>
+  <h1>Ruby and JS</h1>
+  <h2>The differences of looping</h2>
+  <h4>1/24/2016</h4>
+
+  <section>
+    <p>This week at DBC, we have transitioned from Ruby into JavaScript. It has been a rough week of learning new syntax. The lack of help when it comes to errors is also something I have had to learn to miss from Ruby. Another big difference I have come to realizee is the power of built in methods that Ruby has. Some of these built in methods contain large amounts of code that condense the amount of code that you need to type. 
+  
+    </p>
+    <p>Looping in JavaScript is similar to using the while method in Ruby.
+      <script src="https://gist.github.com/Petey101/51322c265d3460dd2045.js"></script>
+      In the above example, we use the "for" method to iterate over array using the variable index. We set the index to start at 0, or the first index of an array, and continue until index reaches one number below array.length or the length of the array. The index++ will increase the number of index by 1 each time so it will execute the block for each element of the array. The block puts the element into the console.
+       
+    </p>
+    <p>In Ruby, we can use the each method to iterate over every element of the array and the syntax is much simpler.
+      <script src="https://gist.github.com/Petey101/73e9ea6a7c4389c26b0e.js"></script>
+      As you can see the code is much easier to read. For the given array, we run the block {|x| x + 1} which takes each element as x and adds 1 to it. The power and simplicity that Ruby brings is amazing and I am glad I was able to temper my logic skills using Ruby before I dove into other languages.
+ 
+    </p>
+    <div class="back">
+      <a href="#"><span></span>Back</a>
+    </div>
+    <div class="next">
+    <a href="#"><span></span>Next</a>
+  </div>
+
+      <section class="footer">
+  <hr>
+  <a href="https://petey101.github.io/contact.html">Contact Me</a>
+  </section>
+  </section>
+</main>
