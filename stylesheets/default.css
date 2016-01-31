@@ -49,7 +49,7 @@ section{
 .footer{
 	clear:both;
 	text-align:center;
-	position:initial;
+	position:static;
 	bottom:0em;
 	width:100%;
 }
