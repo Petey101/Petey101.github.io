@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>
+      Personal Site Index 
+      </title>
+      <link rel="stylesheet" type="text/css" href="../stylesheets/default.css">
+      <link rel="stylesheet" type="text/css" href="../stylesheets/cheat-sheet.css">
+  </head>
+<body>
+    <nav>
+    <ul>
+      <li><a href="https://petey101.github.io/">Home</a></li>
+      <li><a href="https://petey101.github.io/about.html">About Me</a></li>
+      <li><a href="#">Projects</a></li>
+      <li><a href="https://petey101.github.io/blog/index.html">Blog</a></li>
+      <li><a href="https://petey101.github.io/contact.html">Contact</a></li>
+      <ul class="rightnav">
+      <li><a href="https://www.linkedin.com/in/peter-leong-47463310b">LinkedIn</a></li>
+      <li><a href="https://twitter.com/Pleong101Peter">Twitter</a></li>
+      <li><a href="https://github.com/Petey101">GitHub</a></li>
+    </ul>
+    </ul>
+   
+  </nav>
+  <hr>
+  <section>
+    <div class = "cheat">
+    
+    <div class="desc"><h1> Ruby Basics</h1>
+      <h3> Methods</h3>Methods are created using "def" followed by the method name. Method names should begin with a lowercase letter. Methods can take any number of arguments and the arguments can be given default values as well. 
+      <h3> Classes</h3> Classes are created using "class" followed by the class name. Class names should begin with a uppercase letter. Classes can contain a multitude of methods and have instance variables which can be used throughout all the methods within the class. There are also reader and writer attributes that can be applied to classes that allow interaction with the variables outside of the class. 
+      <h3> Array</h3> Arrays are a collection of objects ordered by an index. The first object is indexed at 0 and the last can be indexed at -1.
+      <h3> Hashes</h3>Hashes are a collection of unique keys and their values. You can access values by calling upon the keys.
+      <h3> Strings</h3>Strings are an object which can be made up of most things held within single or double quotes.
+      <h3> Integers</h3>Objects that are whole numbers. 
+    </div>
+  </div>
+    
+   <div class = "cheat">
+   
+     <div class="desc"><h1> Boolean expressions</h1>
+      <h3> a == b</h3>Returns true when a is equal to b.
+      <h3> a != b</h3>Returns true when a is not equal to b.
+      <h3> a > b</h3> Returns true when a is greater than b.
+      <h3> a < b</h3>Returns true when a is less than b.
+      <h3> a >= b</h3> Returns true when a is greater than or equal to b.
+      <h3> a <= b</h3>Returns true when a is less than or equal to b.
+    </div>
+  </div>
+
+     <div class = "cheat">
+   
+    <div class="desc"><h1> Ruby Operators</h1>
+      <h3> +</h3> For adding the values on both side of the operator
+      <h3> -</h3> For subtracting the values on both side of the operator
+      <h3> *</h3> For multiplying the values on both side of the operator
+      <h3> /</h3> For dividing the values on both side of the operator
+      <h3> %</h3> For finding the remainder of the values on both sides of the operator
+      <h3> &&</h3> If both sides of the operator return true, then the condition is true.
+      <h3> ||</h3> If either side of the operator return true, then the condition is true.
+      <h3> !</h3> Reverses the logical state. If a condition is true, it will be false and vice versa.
+    </div>
+   </div>
+
+   <div class = "cheat">
+   
+     <div class="desc"><h1> Array methods</h1>
+      <h3>collect</h3>Passes given elements to the block. Creates new array containing new values. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-collect">Syntax and examples</a>
+      <h3> concat</h3>Adds elements of given arrays together. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-concat">Syntax and examples</a>
+      <h3> count</h3> Returns the number of elements unless an argument is given. If an argument is given, returns the number of elements equal to the given argument. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-count">Syntax and examples</a>
+      <h3> delete_if</h3> Deletes every element where the given block is true for. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-delete_if">Syntax and examples</a>
+      <h3> each</h3> Performs the given block over each element. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-each">Syntax and examples</a>
+      <h3> each_index</h3> Performs the given block over each index. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-each_index">Syntax and examples</a>
+      <h3> flatten</h3> Returns a new array that is a one dimensional array of all the elements in a given array. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-flatten">Syntax and examples</a>
+      <h3> include?</h3> Returns true if the given object is present. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-include-3F">Syntax and examples</a>
+      <h3> insert</h3> Insert the given values at the given index. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-insert">Syntax and examples</a>
+      <h3> join</h3> Returns a string created by converting all the elements of the array to a string and joining them together. <a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-join">Syntax and examples</a>
+      <h3> length</h3> Returns the number of elements in a given array. May be equal to 0.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-length">Syntax and examples</a>
+      <h3> map</h3> Returns the result a given block into a new array. Similar to collect.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-map">Syntax and examples</a>
+      <h3> reverse</h3> Returns a new array containing the elements in reverse order.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-reverse">Syntax and examples</a>
+      <h3> sample</h3> Returns a random element or n number of elements from the array.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-sample">Syntax and examples</a>
+      <h3> select</h3> Returns the elements for which the given block are true.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-select">Syntax and examples</a>
+      <h3> shuffle</h3> Returns a new array with the elements in a random order.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-shuffle">Syntax and examples</a>
+      <h3> uniq</h3> Returns a new array after duplicate values have been removed.<a href="http://ruby-doc.org/core-1.9.3/Array.html#method-i-uniq">Syntax and examples</a>
+
+    </div>
+  </div>
+
+  </section>
+
+ 
+ <section class ="footer">
+  <hr>
+ <a href="https://petey101.github.io/contact.html">Contact Me</a>
+	</section>
+</body>
+</html>
+What content was solidified in the process of completing this challenge?
+What content do you feel a bit fuzzy on still?
+What was the most difficult part of this challenge?
+Has your ability to add CSS to format and position objects improved since week 3?
