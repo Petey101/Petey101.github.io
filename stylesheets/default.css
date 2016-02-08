@@ -42,7 +42,7 @@ section{
     position:relative;
     display:inline-block;
     margin: 5px;
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     float:left;
     width: 25%;
     left:12.5%;
