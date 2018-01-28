@@ -22,7 +22,7 @@ function _generateDashboards (state) {
 }
 
 function dashboardPopAreaBarCharts (state) {
-    var rawCSV = 'data/pop-area.csv';
+    var rawCSV = 'data/prison-release.csv';
     var stateData = [];
     $.get(rawCSV, function (csv) {
         var data = _csvToArray(csv);
