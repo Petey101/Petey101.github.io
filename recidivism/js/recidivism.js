@@ -266,8 +266,8 @@ function _generateNonMetroBarChart (state, data) {
     var id = 'non-metro';
     var name = 'Non-Metropolitan Areas';
     var subtitle = '(population of fewer than 10,000)';
-    var percentChange = data[data.length - 1];
-    _appendPercentChange('#' + id + '-percent-change', percentChange);
+//    var percentChange = data[data.length - 1];
+//    _appendPercentChange('#' + id + '-percent-change', percentChange);
     var cutData = _cutBarChartData(data);
     _createBarChart(cutData, id, name, subtitle);
 }
