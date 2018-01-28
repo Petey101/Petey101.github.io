@@ -22,7 +22,7 @@ function _generateDashboards (state) {
 }
 
 function dashboardPopAreaBarCharts (state) {
-    var rawCSV = 'data/prison-release.csv';
+    var rawCSV = 'data/prison-rearrest.csv';
     var stateData = [];
     $.get(rawCSV, function (csv) {
         var data = _csvToArray(csv);
@@ -59,7 +59,7 @@ function _appendPercentChange (id, percentChange) {
 
 // Area chart
 function dashboardAreaChart (state) {
-    var stateCSV = 'data/crime-rates.csv';
+    var stateCSV = 'data/prison-rearrest.csv';
     var stateData, stateName, increaseOrDecline, percentChange;
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
@@ -355,7 +355,8 @@ function _createAreaChart (stateName, stateData) {
 }
 
 function _generateLineChartData (state, title, type) {
-    var stateCSV = 'data/' + type + '-rate.csv';
+   // var stateCSV = 'data/' + type + '-rate.csv';
+   var stateCSV = 'data/prison-rearrest.csv';
     var stateData, stateName, percentChange;
     $.get(stateCSV, function (csv) {
         var data = _csvToArray(csv);
