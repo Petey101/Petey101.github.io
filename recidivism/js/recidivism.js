@@ -408,7 +408,8 @@ function _csvToArray (csv) {
 
 function arraysIdentical(a, b) {
     var i = a.length;
-    if (i != b.length) return false;
+    if (i != b.length) {
+        return false};
     while (i--) {
         if (a[i] !== b[i]) return false;
     }
@@ -422,7 +423,7 @@ function _formatStateData (data) {
     data = data.map(Number);
     for (var i = 0; i < data.length; i++) {
             if (data[i] == 0) {
-               data[i] = 'Data not available'
+               data[i] = "Data not available"
             }
         }
     if (arraysIdentical(data, ["Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available"]){
