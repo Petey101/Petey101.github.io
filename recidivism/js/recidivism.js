@@ -411,6 +411,7 @@ function _formatStateData (data) {
     // data.splice(-1, 1);
     data = data.map(Number);
     console.log(data);
+    debugger;
     return data;
 }
 // end line chart functions
