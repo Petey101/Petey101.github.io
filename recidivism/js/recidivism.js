@@ -411,11 +411,11 @@ function _formatStateData (data) {
     data.splice(0, 2);
     // data.splice(-1, 1);
     data = data.map(Number);
-    for (var i = 0; i < data.length; i++) {
-            if (data[i] === '') {
-               data[i] = 'Data not available'
-            }
-        }
+    // for (var i = 0; i < data.length; i++) {
+    //         if (data[i] === '') {
+    //            data[i] = 'Data not available'
+    //         }
+    //     }
     return data;
 }
 // end line chart functions
