@@ -55,7 +55,7 @@ function dashboardAssaultRate (state)  {
 
 //function _appendPercentChange (id, percentChange) {
  //   $(id).text(percentChange);
-}
+//}
 
 // Area chart
 function dashboardAreaChart (state) {
