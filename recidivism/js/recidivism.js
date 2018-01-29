@@ -429,7 +429,7 @@ function _formatStateData (data) {
                data[i] = "Data not available"
             }
         }
-    if (arraysIdentical(data, ["Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available"]){
+    if (arraysIdentical(data, ["Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available"])){
         data = []
     }
 
