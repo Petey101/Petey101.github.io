@@ -412,7 +412,7 @@ function _formatStateData (data) {
     // data.splice(-1, 1);
     data = data.map(Number);
     for (var i = 0; i < data.length; i++) {
-            if (data[i] === '') {
+            if (data[i] == 0) {
                data[i] = 'Data not available'
             }
         }
