@@ -408,7 +408,7 @@ function _csvToArray (csv) {
 
 function _formatStateData (data) {
     data.splice(0, 2);
-    data.splice(-1, 1);
+    // data.splice(-1, 1);
     data = data.map(Number);
     return data;
 }
