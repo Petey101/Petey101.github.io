@@ -406,6 +406,15 @@ function _csvToArray (csv) {
     });
 };
 
+function arraysIdentical(a, b) {
+    var i = a.length;
+    if (i != b.length) return false;
+    while (i--) {
+        if (a[i] !== b[i]) return false;
+    }
+    return true;
+};
+
 function _formatStateData (data) {
     debugger;
     data.splice(0, 2);
@@ -416,9 +425,10 @@ function _formatStateData (data) {
                data[i] = 'Data not available'
             }
         }
-    if (data == ["Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available"]){
+    if (arraysIdentical(data, ["Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available", "Data not available"]){
         data = []
     }
+
     return data;
 }
 // end line chart functions
