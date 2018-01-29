@@ -60,14 +60,14 @@ function dashboardAssaultRate (state)  {
 // Area chart
 function dashboardAreaChart (state) {
     var stateCSV = 'data/prison-rearrest.csv';
-    var stateData, stateName, increaseOrDecline;
+    var stateData, stateName;
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
 //                percentChange = data[i][data[i].length - 1];
-                increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
+                // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 stateData = _formatStateData(data[i]);
             }
         }
