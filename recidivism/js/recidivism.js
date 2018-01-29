@@ -407,11 +407,10 @@ function _csvToArray (csv) {
 };
 
 function _formatStateData (data) {
+    debugger;
     data.splice(0, 2);
     // data.splice(-1, 1);
     data = data.map(Number);
-    console.log(data);
-    debugger;
     return data;
 }
 // end line chart functions
