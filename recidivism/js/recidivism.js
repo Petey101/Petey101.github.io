@@ -1,7 +1,7 @@
 $(document).ready(function() {
     _init('CA')
 });
-
+Highcharts.setOptions({lang: {noData: "No Data Available"}})
 function _init(defaultState) {
     if (defaultState) { _generateDashboards(defaultState); }
 
@@ -412,7 +412,7 @@ function _formatStateData (data) {
     // data.splice(-1, 1);
     data = data.map(Number);
     for (var i = 0; i < data.length; i++) {
-            if (data[i] == '') {
+            if (data[i] === '') {
                data[i] = 'Data not available'
             }
         }
