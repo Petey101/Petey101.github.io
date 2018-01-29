@@ -409,14 +409,15 @@ function _csvToArray (csv) {
 function arraysIdentical(a, b) {
     var i = a.length;
     if (i != b.length) {
-        return false};
+        return false;
+    }
     while (i--) {
         if (a[i] !== b[i]) {
             return false;
         }
     }
     return true;
-};
+}
 
 function _formatStateData (data) {
     debugger;
