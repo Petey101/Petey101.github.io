@@ -332,10 +332,10 @@ function _createAreaChart (stateName, stateData) {
             type: 'column'
         },
         title: {
-            text: 'Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents), 2006–2016'
+            text: 'Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents), 2004–2013'
         },
         xAxis: {
-            categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016']
+            categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
         },
         legend: {
             enabled: false
