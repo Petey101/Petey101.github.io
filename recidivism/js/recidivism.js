@@ -272,12 +272,12 @@ function _generateNonMetroBarChart (state, data) {
     _createBarChart(cutData, id, name, subtitle);
 }
 
-function _cutBarChartData (data) {
-    var cutData = [];
-    cutData.push(Number(data.slice(4, 5)[0]));
-    cutData.push(Number(data.slice(6, 7)[0]));
-    return cutData;
-}
+// function _cutBarChartData (data) {
+//     var cutData = [];
+//     cutData.push(Number(data.slice(4, 5)[0]));
+//     cutData.push(Number(data.slice(6, 7)[0]));
+//     return cutData;
+// }
 
 function _createBarChart (data, id, name, subtitle) {
     var myChart = Highcharts.chart(id, {
