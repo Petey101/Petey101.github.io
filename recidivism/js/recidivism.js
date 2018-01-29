@@ -356,7 +356,6 @@ function _createAreaChart (stateName, stateData) {
 
 function _generateLineChartData (state, title, type) {
    // var stateCSV = 'data/' + type + '-rate.csv';
-   debugger;
    var stateCSV = 'data/' + type + '.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
@@ -368,6 +367,7 @@ function _generateLineChartData (state, title, type) {
                 stateData = _formatStateData(data[i]);
             }
         }
+        debugger;
         var chartId = type + '-chart';
 //        _appendPercentChange('#' + type + '-percent-change', percentChange);
         _createLineChart(stateName, stateData, title, chartId);
