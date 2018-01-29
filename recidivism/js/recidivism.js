@@ -72,13 +72,13 @@ function dashboardAreaChart (state) {
             }
         }
 //        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
-        _appendPageTitles(stateName, increaseOrDecline);
+        _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData);
     });
 }
 
-function _appendPageTitles (stateName, increaseOrDecline) {
-    $('#title').text(stateName + '\'s violent crime rate ' + increaseOrDecline + ' overall between 2006 and 2016.');
+function _appendPageTitles (stateName) {
+    $('#title').text(stateName + '\'s violent crime rate overall between 2006 and 2016.');
     $('#category-title').text('Change in ' + stateName + '\'s Violent Crime Rate (Incidents per 100,000 Residents) by Category, 2006–2016')
     $('#bar-chart-title').text('Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents) by Population Area, 2006–2016');
 }
