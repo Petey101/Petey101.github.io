@@ -1,7 +1,6 @@
 $(document).ready(function() {
     _init('CA')
 });
-Highcharts.setOptions({lang: {noData: "No Data Available"}})
 function _init(defaultState) {
     if (defaultState) { _generateDashboards(defaultState); }
 
@@ -327,6 +326,7 @@ function appendStateDescription (state) {
 
 // Line chart functions
 function _createAreaChart (stateName, stateData) {
+    Highcharts.setOptions({lang: {noData: "No Data Available"}})
     var myChart = Highcharts.chart('crime-rate-chart', {
         chart: {
             type: 'column'
