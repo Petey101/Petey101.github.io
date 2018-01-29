@@ -13,7 +13,7 @@ function _init(defaultState) {
 function _generateDashboards (state) {
     dashboardAreaChart(state);
     appendStateDescription(state);
-    dashboardHomocideRate(state);
+    dashboardPrisonReconviction(state);
     dashboardRapeRate(state);
     dashboardRobberyRate(state);
     dashboardAssaultRate(state);
@@ -36,8 +36,8 @@ function _generateDashboards (state) {
 //     });
 // }
 
-function dashboardHomocideRate (state) {
-    _generateLineChartData(state, 'Homocide', 'homocide');
+function dashboardPrisonReconviction(state) {
+    _generateLineChartData(state, 'Prison Reconviction', 'prison-reconviction');
 }
 
 function dashboardRapeRate (state) {
@@ -332,7 +332,7 @@ function _createAreaChart (stateName, stateData) {
             type: 'column'
         },
         title: {
-            text: 'Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents), 2004–2013'
+            text: 'Percentage of Prison Rearrests in  ' + stateName + ', 2004–2013'
         },
         xAxis: {
             categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
@@ -356,7 +356,7 @@ function _createAreaChart (stateName, stateData) {
 
 function _generateLineChartData (state, title, type) {
    // var stateCSV = 'data/' + type + '-rate.csv';
-   var stateCSV = 'data/prison-rearrest.csv';
+   var stateCSV = 'data/' + type + '.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
         var data = _csvToArray(csv);
@@ -382,7 +382,7 @@ function _createLineChart (stateName, stateData, title, chartId) {
             text: title
         },
         xAxis: {
-            categories: ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016']
+            categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
         },
         legend: {
             enabled: false
