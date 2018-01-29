@@ -53,25 +53,25 @@ function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Aggravated Assault', 'assault');
 }
 
-function _appendPercentChange (id, percentChange) {
-    $(id).text(percentChange);
+//function _appendPercentChange (id, percentChange) {
+ //   $(id).text(percentChange);
 }
 
 // Area chart
 function dashboardAreaChart (state) {
     var stateCSV = 'data/prison-rearrest.csv';
-    var stateData, stateName, increaseOrDecline, percentChange;
+    var stateData, stateName, increaseOrDecline;
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-                percentChange = data[i][data[i].length - 1];
+//                percentChange = data[i][data[i].length - 1];
                 increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 stateData = _formatStateData(data[i]);
             }
         }
-        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
+//        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName, increaseOrDecline);
         _createAreaChart(stateName, stateData);
     });
@@ -246,8 +246,8 @@ function _generateMetroBarChart (state, data) {
     var id = 'metro';
     var name = 'Metropolitan Areas';
     var subtitle = '(population of 50,000+)'
-    var percentChange = data[data.length - 1];
-    _appendPercentChange('#' + id + '-percent-change', percentChange);
+//    var percentChange = data[data.length - 1];
+//    _appendPercentChange('#' + id + '-percent-change', percentChange);
     var cutData = _cutBarChartData(data);
     _createBarChart(cutData, id, name, subtitle);
 }
@@ -256,8 +256,8 @@ function _generateMicroBarChart (state, data) {
     var id = 'micro';
     var name = 'Micropolitan Areas';
     var subtitle = '(population of 10,000–49,999)';
-    var percentChange = data[data.length - 1];
-    _appendPercentChange('#' + id + '-percent-change', percentChange);
+//    var percentChange = data[data.length - 1];
+ //   _appendPercentChange('#' + id + '-percent-change', percentChange);
     var cutData = _cutBarChartData(data);
     _createBarChart(cutData, id, name, subtitle);
 }
@@ -357,18 +357,18 @@ function _createAreaChart (stateName, stateData) {
 function _generateLineChartData (state, title, type) {
    // var stateCSV = 'data/' + type + '-rate.csv';
    var stateCSV = 'data/prison-rearrest.csv';
-    var stateData, stateName, percentChange;
+    var stateData, stateName;
     $.get(stateCSV, function (csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-                percentChange = data[i][data[i].length - 1];
+//                percentChange = data[i][data[i].length - 1];
                 stateData = _formatStateData(data[i]);
             }
         }
         var chartId = type + '-chart';
-        _appendPercentChange('#' + type + '-percent-change', percentChange);
+//        _appendPercentChange('#' + type + '-percent-change', percentChange);
         _createLineChart(stateName, stateData, title, chartId);
     });
 }
