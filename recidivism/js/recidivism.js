@@ -18,24 +18,24 @@ function _generateDashboards (state) {
     dashboardRapeRate(state);
     dashboardRobberyRate(state);
     dashboardAssaultRate(state);
-    dashboardPopAreaBarCharts(state);
+    // dashboardPopAreaBarCharts(state);
 }
 
-function dashboardPopAreaBarCharts (state) {
-    var rawCSV = 'data/prison-rearrest.csv';
-    var stateData = [];
-    $.get(rawCSV, function (csv) {
-        var data = _csvToArray(csv);
-        for (var i = 0; i < data.length; i++) {
-            if (data[i][1] == state) {
-                stateData.push(data[i]);
-            }
-        }
-        _generateMetroBarChart(state, stateData[0]);
-        _generateMicroBarChart(state, stateData[1]);
-        _generateNonMetroBarChart(state, stateData[2]);
-    });
-}
+// function dashboardPopAreaBarCharts (state) {
+//     var rawCSV = 'data/prison-rearrest.csv';
+//     var stateData = [];
+//     $.get(rawCSV, function (csv) {
+//         var data = _csvToArray(csv);
+//         for (var i = 0; i < data.length; i++) {
+//             if (data[i][1] == state) {
+//                 stateData.push(data[i]);
+//             }
+//         }
+//         _generateMetroBarChart(state, stateData[0]);
+//         _generateMicroBarChart(state, stateData[1]);
+//         _generateNonMetroBarChart(state, stateData[2]);
+//     });
+// }
 
 function dashboardHomocideRate (state) {
     _generateLineChartData(state, 'Homocide', 'homocide');
@@ -242,35 +242,35 @@ function appendStateDescription (state) {
 // end area chart
 
 // Bar chart functions
-function _generateMetroBarChart (state, data) {
-    var id = 'metro';
-    var name = 'Metropolitan Areas';
-    var subtitle = '(population of 50,000+)'
-//    var percentChange = data[data.length - 1];
-//    _appendPercentChange('#' + id + '-percent-change', percentChange);
-    var cutData = _cutBarChartData(data);
-    _createBarChart(cutData, id, name, subtitle);
-}
+// function _generateMetroBarChart (state, data) {
+//     var id = 'metro';
+//     var name = 'Metropolitan Areas';
+//     var subtitle = '(population of 50,000+)'
+// //    var percentChange = data[data.length - 1];
+// //    _appendPercentChange('#' + id + '-percent-change', percentChange);
+//     var cutData = _cutBarChartData(data);
+//     _createBarChart(cutData, id, name, subtitle);
+// }
 
-function _generateMicroBarChart (state, data) {
-    var id = 'micro';
-    var name = 'Micropolitan Areas';
-    var subtitle = '(population of 10,000–49,999)';
-//    var percentChange = data[data.length - 1];
- //   _appendPercentChange('#' + id + '-percent-change', percentChange);
-    var cutData = _cutBarChartData(data);
-    _createBarChart(cutData, id, name, subtitle);
-}
+// function _generateMicroBarChart (state, data) {
+//     var id = 'micro';
+//     var name = 'Micropolitan Areas';
+//     var subtitle = '(population of 10,000–49,999)';
+// //    var percentChange = data[data.length - 1];
+//  //   _appendPercentChange('#' + id + '-percent-change', percentChange);
+//     var cutData = _cutBarChartData(data);
+//     _createBarChart(cutData, id, name, subtitle);
+// }
 
-function _generateNonMetroBarChart (state, data) {
-    var id = 'non-metro';
-    var name = 'Non-Metropolitan Areas';
-    var subtitle = '(population of fewer than 10,000)';
-//    var percentChange = data[data.length - 1];
-//    _appendPercentChange('#' + id + '-percent-change', percentChange);
-    var cutData = _cutBarChartData(data);
-    _createBarChart(cutData, id, name, subtitle);
-}
+// function _generateNonMetroBarChart (state, data) {
+//     var id = 'non-metro';
+//     var name = 'Non-Metropolitan Areas';
+//     var subtitle = '(population of fewer than 10,000)';
+// //    var percentChange = data[data.length - 1];
+// //    _appendPercentChange('#' + id + '-percent-change', percentChange);
+//     var cutData = _cutBarChartData(data);
+//     _createBarChart(cutData, id, name, subtitle);
+// }
 
 // function _cutBarChartData (data) {
 //     var cutData = [];
@@ -279,50 +279,50 @@ function _generateNonMetroBarChart (state, data) {
 //     return cutData;
 // }
 
-function _createBarChart (data, id, name, subtitle) {
-    var myChart = Highcharts.chart(id, {
-        chart: {
-            type: 'bar'
-        },
-        title: {
-            text: name
-        },
-        subtitle: {
-            text: subtitle
-        },
-        xAxis: {
-            categories: ['', ''],
-            labels: {
-                enabled: false
-            }
-        },
-        yAxis: {
-            title: {
-                text: ''
-            },
-            labels: {
-                enabled: false
-            }
-        },
-        legend: {
-            enabled: false
-        },
-        colors: [
-            '#E76946',
-            '#FBB731'
-        ],
-        plotOptions: {
-               series: {
-                   pointPadding: 0,
-                   groupPadding: 0,
-                   colorByPoint: true
-               }
-           },
-        series: [{
-            data: data
-        }]
-    });
-}
+// function _createBarChart (data, id, name, subtitle) {
+//     var myChart = Highcharts.chart(id, {
+//         chart: {
+//             type: 'bar'
+//         },
+//         title: {
+//             text: name
+//         },
+//         subtitle: {
+//             text: subtitle
+//         },
+//         xAxis: {
+//             categories: ['', ''],
+//             labels: {
+//                 enabled: false
+//             }
+//         },
+//         yAxis: {
+//             title: {
+//                 text: ''
+//             },
+//             labels: {
+//                 enabled: false
+//             }
+//         },
+//         legend: {
+//             enabled: false
+//         },
+//         colors: [
+//             '#E76946',
+//             '#FBB731'
+//         ],
+//         plotOptions: {
+//                series: {
+//                    pointPadding: 0,
+//                    groupPadding: 0,
+//                    colorByPoint: true
+//                }
+//            },
+//         series: [{
+//             data: data
+//         }]
+//     });
+// }
 // end bar chart
 
 // Line chart functions
