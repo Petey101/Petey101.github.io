@@ -329,7 +329,7 @@ function appendStateDescription (state) {
 function _createAreaChart (stateName, stateData) {
     var myChart = Highcharts.chart('crime-rate-chart', {
         chart: {
-            type: 'area'
+            type: 'column'
         },
         title: {
             text: 'Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents), 2006–2016'
