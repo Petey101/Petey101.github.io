@@ -356,6 +356,7 @@ function _createAreaChart (stateName, stateData) {
 
 function _generateLineChartData (state, title, type) {
    // var stateCSV = 'data/' + type + '-rate.csv';
+   debugger;
    var stateCSV = 'data/' + type + '.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
@@ -420,7 +421,6 @@ function arraysIdentical(a, b) {
 }
 
 function _formatStateData (data) {
-    debugger;
     data.splice(0, 2);
     // data.splice(-1, 1);
     data = data.map(Number);
