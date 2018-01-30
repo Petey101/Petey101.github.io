@@ -392,6 +392,7 @@ function _createLineChart (stateName, stateData, title, chartId) {
             title: {
                 text: ''
             }
+             min: 0
         },
         series: [{
             name: stateName,
