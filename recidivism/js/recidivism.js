@@ -41,15 +41,15 @@ function dashboardPrisonReconviction(state) {
 }
 
 function dashboardRapeRate (state) {
-    _generateLineChartData (state, 'Rape', 'rape');
+    _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
 }
 
 function dashboardRobberyRate (state)  {
-    _generateLineChartData (state, 'Robbery', 'robbery');
+    _generateLineChartData (state, 'Probation Rearrest', 'probation-rearrest');
 }
 
 function dashboardAssaultRate (state)  {
-    _generateLineChartData (state, 'Aggravated Assault', 'assault');
+    _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
 
 //function _appendPercentChange (id, percentChange) {
