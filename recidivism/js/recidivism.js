@@ -391,7 +391,7 @@ function _createLineChart (stateName, stateData, title, chartId) {
         yAxis: {
             title: {
                 text: ''
-            }
+            },
              min: 0
         },
         series: [{
