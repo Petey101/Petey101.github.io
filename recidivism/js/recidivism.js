@@ -377,7 +377,7 @@ function _generateLineChartData (state, title, type) {
 function _createLineChart (stateName, stateData, title, chartId) {
     var myChart = Highcharts.chart(chartId, {
         chart: {
-            type: 'line'
+            type: 'column'
         },
         title: {
             text: title
