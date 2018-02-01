@@ -70,7 +70,6 @@ function dashboardAreaChart (state) {
                 stateData = _formatStateData(data[i]);
             }
         }
-        debugger;
 //        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData);
@@ -425,6 +424,7 @@ function _formatStateData (data) {
     data.splice(0, 2);
     data.splice(-1, 1);
     data = data.map(Number);
+    debugger;
     for (var i = 0; i < data.length; i++) {
             if (data[i] == 0) {
                data[i] = "Data not available"
