@@ -58,7 +58,7 @@ function dashboardAssaultRate (state)  {
 
 // Area chart
 function dashboardAreaChart (state) {
-    var stateCSV = 'data/prison-rearrest.csv';
+    var stateCSV = 'data/prison.csv';
     var stateData, stateName;
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
@@ -423,7 +423,7 @@ function arraysIdentical(a, b) {
 
 function _formatStateData (data) {
     data.splice(0, 2);
-    // data.splice(-1, 1);
+    data.splice(-1, 1);
     data = data.map(Number);
     for (var i = 0; i < data.length; i++) {
             if (data[i] == 0) {
