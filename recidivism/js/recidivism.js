@@ -52,6 +52,7 @@ function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
 
+
 //function _appendPercentChange (id, percentChange) {
  //   $(id).text(percentChange);
 //}

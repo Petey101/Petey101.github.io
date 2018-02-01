@@ -70,6 +70,7 @@ function dashboardAreaChart (state) {
                 stateData = _formatStateData(data[i]);
             }
         }
+        debugger;
 //        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData);
@@ -335,7 +336,7 @@ function _createAreaChart (stateName, stateData) {
             text: 'Percentage of Prison Rearrests in  ' + stateName + ', 2004–2013'
         },
         xAxis: {
-            categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+            categories: ['2005', '2006', '2007', '2008', '2009', '20010', '2011', '2012', '2013', '2014', '2015']
         },
         legend: {
             enabled: false
@@ -367,7 +368,6 @@ function _generateLineChartData (state, title, type) {
                 stateData = _formatStateData(data[i]);
             }
         }
-        debugger;
         var chartId = type + '-chart';
 //        _appendPercentChange('#' + type + '-percent-change', percentChange);
         _createLineChart(stateName, stateData, title, chartId);
