@@ -329,7 +329,7 @@ function _createAreaChart (stateName, stateData) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
     var myChart = Highcharts.chart('crime-rate-chart', {
         chart: {
-            type: 'column'
+            type: 'area'
         },
         title: {
             text: 'Percentage of Prison Rearrests in  ' + stateName + ', 2004–2013'
