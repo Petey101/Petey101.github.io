@@ -70,6 +70,7 @@ function dashboardAreaChart (state) {
                 percentChange1 = data[i][data[i].length - 1];
                 // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 stateData1 = _formatStateData(data[i]);
+                debugger;
             }
         }
     });
@@ -91,7 +92,6 @@ function dashboardAreaChart (state) {
             }
         }
     });
-        debugger;
            // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData1, stateData2, stateData3);
