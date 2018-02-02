@@ -82,9 +82,9 @@ function dashboardAreaChart (state) {
 }
 
 function _appendPageTitles (stateName) {
-    $('#title').text(stateName + '\'s violent crime rate overall between 2006 and 2016.');
-    $('#category-title').text('Change in ' + stateName + '\'s Violent Crime Rate (Incidents per 100,000 Residents) by Category, 2006–2016')
-    $('#bar-chart-title').text('Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents) by Population Area, 2006–2016');
+    $('#title').text(stateName + '\'s recidivism rates between 2004 and 2013.');
+    $('#category-title').text('Change in ' + stateName + '\'s population released from prison, 2004–2013')
+    $('#bar-chart-title').text('Change in ' + stateName + '\'s population starting probation, 2004–2013');
 }
 
 function appendStateDescription (state) {
