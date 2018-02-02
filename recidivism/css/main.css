@@ -1,24 +1,12 @@
-.crime-rate-chart-section {
+.top-section {
   font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
   color: #525252;
   padding: 30px;
 }
 
-.crime-rate-chart-section p {
-  margin: 30px 0;
-  line-height: 1.5em;
-}
 
 .chart-container {
   padding: 30px;
-}
-
-.percent-change {
-  position: absolute;
-  top: 42%;
-  left: 70%;
-  font-size: 36px;
-  font-weight: bold;
 }
 
 .center-text {
@@ -29,14 +17,8 @@
   height:400px;
 }
 
-.line-chart {
-  height: 400px;
-  width: 100%;
-  display: inline-flex;
-}
-
 .line-charts {
-  width: 50%;
+  width: 45%;
   display: inline-block;
   vertical-align:top;
   border-right: 1px solid #999;
@@ -49,7 +31,7 @@
 }
 
 .bar-charts {
-  width: 50%;
+  width: 45%;
   display: inline-block;
 }
 
