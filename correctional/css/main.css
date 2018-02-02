@@ -42,22 +42,6 @@
   text-align: center;
 }
 
-.blue {
-  color: #bee8fd;
-}
-
-.red {
-  color: #f05a22;
-}
-
-.yellow {
-  color: #fbd813;
-}
-
-.salmon {
-  color: #FAAA96;
-}
-
 .area-chart {
   height:400px;
 }
@@ -78,15 +62,6 @@
   position: relative;
   width: 45%;
   display: inline-flex;
-}
-
-.bar-charts {
-  width: 33%;
-  display: inline-block;
-}
-
-.bar-chart {
-  height: 235px;
 }
 
 .relative-container {
