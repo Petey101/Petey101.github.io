@@ -307,7 +307,11 @@ function _createBarChart (stateName, stateData, chartId) {
             text: 'Correctional spending of  ' + stateName + '.'
         },
         xAxis: {
-            categories: ['Prison (FY2015)', 'Probation/Parole (FY2017)']
+          labels: {
+            formatter: function() {
+              return this.value / 1000000 + 'M';
+            }
+          }
         },
         legend: {
             enabled: false

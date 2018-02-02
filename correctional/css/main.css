@@ -69,10 +69,9 @@
 }
 
 .line-charts {
-  width: 66%;
+  width: 100%;
   display: inline-block;
   vertical-align:top;
-  border-right: 1px solid #999;
 }
 
 .line-charts-container {
