@@ -257,7 +257,6 @@ function _generateOtherChartData (state, title, type) {
                 stateData = _formatStateData(data[i]);
             }
         }
-        debugger;
         var chartId = type + '-chart';
         _createOtherChart(stateName, stateData, title, chartId);
     });
