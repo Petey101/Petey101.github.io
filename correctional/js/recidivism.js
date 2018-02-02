@@ -371,20 +371,20 @@ function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
         series: [{
             name: "Prison Population",
             data: stateData1,
-            color: '#66ccff',
-            fillOpacity: 1
+            color: '#00008b',
+            fillOpacity: 0.1
         },
         {
             name: "Parole Population",
             data: stateData2,
-            color: '#66ccff',
-            fillOpacity: 1
+            color: '#0099ff',
+            fillOpacity: 0.1
         },
         {
             name: "Probation Population",
             data: stateData3,
             color: '#66ccff',
-            fillOpacity: 1
+            fillOpacity: 0.1
         },
         ],
     });
