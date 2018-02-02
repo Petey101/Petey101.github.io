@@ -93,7 +93,7 @@ function dashboardAreaChart (state) {
     });
            // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
-        _createAreaChart(stateName, stateData);
+        _createAreaChart(stateName, stateData1, stateData2, stateData3);
     
 }
 
