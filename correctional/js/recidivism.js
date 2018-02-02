@@ -77,17 +77,17 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
                 if (counter == 1) {
                     percentChange = data[i][data[i].length - 1];
                     stateData1 = _formatStateData(data[i]);
-                    _appendPercentChange('#prison-population-change', 'A ' + percentChange + ' in prison population.' );
+                    _appendPercentChange('#prison-population-change', 'A ' + percentChange + ' change in prison population.' );
                 };
                 if (counter == 2) {
                     percentChange = data[i][data[i].length - 1];
                     stateData2 = _formatStateData(data[i]);
-                    _appendPercentChange('#parole-population-change', 'A ' + percentChange + ' in parole population.');
+                    _appendPercentChange('#parole-population-change', 'A ' + percentChange + ' change in parole population.');
                 };
                 if (counter == 3) {
                     percentChange = data[i][data[i].length - 1];
                     stateData3 = _formatStateData(data[i]);
-                    _appendPercentChange('#probation-population-percent-change', 'A ' + percentChange + ' in probation population.');
+                    _appendPercentChange('#probation-population-percent-change', 'A ' + percentChange + ' change in probation population.');
                 };
             }
         }
