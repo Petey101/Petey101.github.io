@@ -14,52 +14,17 @@ function _generateDashboards (state) {
     dashboardAreaChart(state);
     appendStateDescription(state);
     dashboardSpending(state);
-    // dashboardRapeRate(state);
-    // dashboardRobberyRate(state);
-    // dashboardAssaultRate(state);
-    // dashboardPopAreaBarCharts(state);
 }
-
-// function dashboardPopAreaBarCharts (state) {
-//     var rawCSV = 'data/prison-rearrest.csv';
-//     var stateData = [];
-//     $.get(rawCSV, function (csv) {
-//         var data = _csvToArray(csv);
-//         for (var i = 0; i < data.length; i++) {
-//             if (data[i][1] == state) {
-//                 stateData.push(data[i]);
-//             }
-//         }
-//         _generateMetroBarChart(state, stateData[0]);
-//         _generateMicroBarChart(state, stateData[1]);
-//         _generateNonMetroBarChart(state, stateData[2]);
-//     });
-// }
 
 function dashboardSpending(state) {
     _generateLineChartData(state, 'spending');
 }
 
-// function dashboardRapeRate (state) {
-//     _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
-// }
-
-// function dashboardRobberyRate (state)  {
-//     _generateLineChartData (state, 'Probation Rearrest', 'probation-rearrest');
-// }
-
-// function dashboardAssaultRate (state)  {
-//     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
-// }
-
 function _appendPercentChange (id, percentChange) {
    $(id).text(percentChange);
 }
 
-// Area chart
 function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, stateData1 = undefined, stateData2 = undefined) {
-    // var stateCSV = 'data/prison.csv';
-    // var counter = 1
     var stateData1, stateName;
     if (counter == 2) {
         var stateData2 = []
@@ -73,7 +38,6 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
             if (data[i][1] == state) {
                 stateName = data[i][0];
                percentChange = data[i][data[i].length - 1];
-                // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 if (counter == 1) {
                     percentChange = data[i][data[i].length - 1];
                     stateData1 = _formatStateData(data[i]);
@@ -91,7 +55,6 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
                 };
             }
         }
-//        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         if (stateData2 == undefined ){ 
             dashboardAreaChart (state, stateCSV = 'data/parole.csv', counter = 2, stateData1, stateData2)
         }
@@ -265,93 +228,7 @@ function appendStateDescription (state) {
         break;
     }
 }
-// end area chart
 
-// Bar chart functions
-// function _generateMetroBarChart (state, data) {
-//     var id = 'metro';
-//     var name = 'Metropolitan Areas';
-//     var subtitle = '(population of 50,000+)'
-// //    var percentChange = data[data.length - 1];
-// //    _appendPercentChange('#' + id + '-percent-change', percentChange);
-//     var cutData = _cutBarChartData(data);
-//     _createBarChart(cutData, id, name, subtitle);
-// }
-
-// function _generateMicroBarChart (state, data) {
-//     var id = 'micro';
-//     var name = 'Micropolitan Areas';
-//     var subtitle = '(population of 10,000–49,999)';
-// //    var percentChange = data[data.length - 1];
-//  //   _appendPercentChange('#' + id + '-percent-change', percentChange);
-//     var cutData = _cutBarChartData(data);
-//     _createBarChart(cutData, id, name, subtitle);
-// }
-
-// function _generateNonMetroBarChart (state, data) {
-//     var id = 'non-metro';
-//     var name = 'Non-Metropolitan Areas';
-//     var subtitle = '(population of fewer than 10,000)';
-// //    var percentChange = data[data.length - 1];
-// //    _appendPercentChange('#' + id + '-percent-change', percentChange);
-//     var cutData = _cutBarChartData(data);
-//     _createBarChart(cutData, id, name, subtitle);
-// }
-
-// function _cutBarChartData (data) {
-//     var cutData = [];
-//     cutData.push(Number(data.slice(4, 5)[0]));
-//     cutData.push(Number(data.slice(6, 7)[0]));
-//     return cutData;
-// }
-
-// function _createBarChart (data, id, name, subtitle) {
-//     var myChart = Highcharts.chart(id, {
-//         chart: {
-//             type: 'bar'
-//         },
-//         title: {
-//             text: name
-//         },
-//         subtitle: {
-//             text: subtitle
-//         },
-//         xAxis: {
-//             categories: ['', ''],
-//             labels: {
-//                 enabled: false
-//             }
-//         },
-//         yAxis: {
-//             title: {
-//                 text: ''
-//             },
-//             labels: {
-//                 enabled: false
-//             }
-//         },
-//         legend: {
-//             enabled: false
-//         },
-//         colors: [
-//             '#E76946',
-//             '#FBB731'
-//         ],
-//         plotOptions: {
-//                series: {
-//                    pointPadding: 0,
-//                    groupPadding: 0,
-//                    colorByPoint: true
-//                }
-//            },
-//         series: [{
-//             data: data
-//         }]
-//     });
-// }
-// end bar chart
-
-// Line chart functions
 function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
     var myChart = Highcharts.chart('crime-rate-chart', {
@@ -394,8 +271,7 @@ function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
     });
 }
 
-function _generateLineChartData (state, type) {
-   // var stateCSV = 'data/' + type + '-rate.csv';
+function _generateBarChartData (state, type) {
    var stateCSV = 'data/spending.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
@@ -403,21 +279,17 @@ function _generateLineChartData (state, type) {
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-                debugger;
-//                percentChange = data[i][data[i].length - 1];
                 data[i].splice(0, 2);
                 data = data[i].map(Number);
                 stateData = data
-                // stateData = _formatStateData(data[i]);
             }
         }
         var chartId = type + '-chart';
-//        _appendPercentChange('#' + type + '-percent-change', percentChange);
-        _createLineChart(stateName, stateData, chartId);
+        _createBarChart(stateName, stateData, chartId);
     });
 }
 
-function _createLineChart (stateName, stateData, chartId) {
+function _createBarChart (stateName, stateData, chartId) {
     var myChart = Highcharts.chart(chartId, {
         chart: {
             type: 'bar'
@@ -488,4 +360,3 @@ function _formatStateData (data) {
 
     return data;
 }
-// end line chart functions
