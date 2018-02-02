@@ -87,10 +87,10 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
         }
 //        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         if (stateData2 == undefined ){ 
-            dashboardAreaChart (state, stateCSV, = 'data/parole.csv', counter = 2, stateData1, stateData2)
+            dashboardAreaChart (state, stateCSV = 'data/parole.csv', counter = 2, stateData1, stateData2)
         };
         if (stateData3 == undefined ){ 
-            dashboardAreaChart (state, stateCSV, = 'data/probation.csv', counter = 3, stateData1, stateData2)
+            dashboardAreaChart (state, stateCSV = 'data/probation.csv', counter = 3, stateData1, stateData2)
         };
 
         _appendPageTitles(stateName);
