@@ -65,7 +65,7 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
         var stateData2 = []
     };
     if (counter == 3) {
-        var stateData2 = []
+        var stateData3 = []
     };
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
