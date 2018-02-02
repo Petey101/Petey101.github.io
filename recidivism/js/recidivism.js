@@ -11,35 +11,35 @@ function _init(defaultState) {
 }
 
 function _generateDashboards (state) {
-    dashboardAreaChart(state);
+    dashboardFirstChart(state);
     appendStateDescription(state);
     dashboardPrisonReconviction(state);
-    dashboardRapeRate(state);
-    dashboardRobberyRate(state);
-    dashboardAssaultRate(state);
+    dashboardPrisonReincarceration(state);
+    dashboardProbationRearrest(state);
+    dashboardProbationReconviction(state);
     dashboardProbationIncarceration(state);
 }
 
 function dashboardPrisonReconviction(state) {
-    _generateLineChartData(state, 'Prison Reconviction', 'prison-reconviction');
+    _generateOtherChartData(state, 'Prison Reconviction', 'prison-reconviction');
 }
 
-function dashboardRapeRate (state) {
-    _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
+function dashboardPrisonReincarceration (state) {
+    _generateOtherChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
 }
 
-function dashboardRobberyRate (state)  {
-    _generateLineChartData (state, 'Probation Rearrest', 'probation-rearrest');
+function dashboardProbationRearrest (state)  {
+    _generateOtherChartData (state, 'Probation Rearrest', 'probation-rearrest');
 }
 
-function dashboardAssaultRate (state)  {
-    _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
+function dashboardProbationReconviction (state)  {
+    _generateOtherChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
 function dashboardProbationIncarceration (state)  {
-    _generateLineChartData (state, 'Probation Incarceration', 'probation-incarceration');
+    _generateOtherChartData (state, 'Probation Incarceration', 'probation-incarceration');
 }
 
-function dashboardAreaChart (state) {
+function dashboardFirstChart (state) {
     var stateCSV = 'data/prison-rearrest.csv';
     var stateData, stateName;
     $.get(stateCSV, function(csv) {
@@ -51,7 +51,7 @@ function dashboardAreaChart (state) {
             }
         }
         _appendPageTitles(stateName);
-        _createAreaChart(stateName, stateData);
+        _createFirstChart(stateName, stateData);
     });
 }
 
@@ -218,7 +218,7 @@ function appendStateDescription (state) {
     }
 }
 
-function _createAreaChart (stateName, stateData) {
+function _createFirstChart (stateName, stateData) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
     var myChart = Highcharts.chart('prison-rearrest-chart', {
         chart: {
@@ -246,7 +246,7 @@ function _createAreaChart (stateName, stateData) {
     });
 }
 
-function _generateLineChartData (state, title, type) {
+function _generateOtherChartData (state, title, type) {
    var stateCSV = 'data/' + type + '.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
@@ -259,11 +259,11 @@ function _generateLineChartData (state, title, type) {
         }
         debugger;
         var chartId = type + '-chart';
-        _createLineChart(stateName, stateData, title, chartId);
+        _createOtherChart(stateName, stateData, title, chartId);
     });
 }
 
-function _createLineChart (stateName, stateData, title, chartId) {
+function _createOtherChart (stateName, stateData, title, chartId) {
     var myChart = Highcharts.chart(chartId, {
         chart: {
             type: 'column'
