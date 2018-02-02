@@ -17,7 +17,7 @@ function _generateDashboards (state) {
 }
 
 function dashboardSpending(state) {
-    _generateLineChartData(state, 'spending');
+    _generateBarChartData(state, 'spending');
 }
 
 function _appendPercentChange (id, percentChange) {
