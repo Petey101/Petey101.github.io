@@ -13,7 +13,7 @@ function _init(defaultState) {
 function _generateDashboards (state) {
     dashboardAreaChart(state);
     appendStateDescription(state);
-    // dashboardPrisonReconviction(state);
+    dashboardPrisonReconviction(state);
     // dashboardRapeRate(state);
     // dashboardRobberyRate(state);
     // dashboardAssaultRate(state);
@@ -36,9 +36,9 @@ function _generateDashboards (state) {
 //     });
 // }
 
-// function dashboardPrisonReconviction(state) {
-//     _generateLineChartData(state, 'Prison Reconviction', 'prison-reconviction');
-// }
+function dashboardSpending(state) {
+    _generateLineChartData(state, 'spending');
+}
 
 // function dashboardRapeRate (state) {
 //     _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
@@ -106,8 +106,8 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
 }
 
 function _appendPageTitles (stateName) {
-    $('#title').text(stateName + '\'s violent crime rate overall between 2006 and 2016.');
-    $('#category-title').text('Change in ' + stateName + '\'s Violent Crime Rate (Incidents per 100,000 Residents) by Category, 2006–2016')
+    $('#title').text(stateName + '\'s Correctional Populations between 2005 and 2015.');
+    $('#category-title').text('Change in ' + stateName + '\'s Correctional Populations by Category, 2005–2015')
     $('#bar-chart-title').text('Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents) by Population Area, 2006–2016');
 }
 
@@ -396,9 +396,9 @@ function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
     });
 }
 
-function _generateLineChartData (state, title, type) {
+function _generateLineChartData (state, type) {
    // var stateCSV = 'data/' + type + '-rate.csv';
-   var stateCSV = 'data/' + type + '.csv';
+   var stateCSV = 'data/spending.csv';
     var stateData, stateName;
     $.get(stateCSV, function (csv) {
         var data = _csvToArray(csv);
@@ -406,25 +406,28 @@ function _generateLineChartData (state, title, type) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
 //                percentChange = data[i][data[i].length - 1];
-                stateData = _formatStateData(data[i]);
+                data.splice(0, 2);
+                data = data.map(Number);
+                stateData = data
+                // stateData = _formatStateData(data[i]);
             }
         }
         var chartId = type + '-chart';
 //        _appendPercentChange('#' + type + '-percent-change', percentChange);
-        _createLineChart(stateName, stateData, title, chartId);
+        _createLineChart(stateName, stateData, chartId);
     });
 }
 
-function _createLineChart (stateName, stateData, title, chartId) {
+function _createLineChart (stateName, stateData, chartId) {
     var myChart = Highcharts.chart(chartId, {
         chart: {
-            type: 'column'
+            type: 'bar'
         },
         title: {
-            text: title
+            text: 'Correctional spending of  ' + stateName + '.'
         },
         xAxis: {
-            categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
+            categories: ['Prison (FY2015)', 'Probation/Parole (FY2017)']
         },
         legend: {
             enabled: false
