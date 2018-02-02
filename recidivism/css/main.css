@@ -17,7 +17,7 @@
   height:400px;
 }
 
-.line-charts {
+.prison-charts {
   width: 45%;
   display: inline-block;
   vertical-align:top;
@@ -30,12 +30,12 @@
   display: inline-flex;
 }
 
-.bar-charts {
+.probation-charts {
   width: 45%;
   display: inline-block;
 }
 
-.bar-chart {
+.column-chart {
   height: 235px;
 }
 
