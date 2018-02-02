@@ -332,7 +332,7 @@ function appendStateDescription (state) {
 // Line chart functions
 function _createAreaChart (stateName, stateData) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
-    var myChart = Highcharts.chart('crime-rate-chart', {
+    var myChart = Highcharts.chart('prison-rearrest-chart', {
         chart: {
             type: 'column'
         },
