@@ -52,28 +52,49 @@ function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
 
-//function _appendPercentChange (id, percentChange) {
- //   $(id).text(percentChange);
-//}
+// function _appendPercentChange (id, percentChange) {
+//    $(id).text(percentChange);
+// }
 
 // Area chart
 function dashboardAreaChart (state) {
-    var stateCSV = 'data/prison.csv';
-    var stateData, stateName;
-    $.get(stateCSV, function(csv) {
+    var stateCSV1 = 'data/prison.csv';
+    var stateCSV2 = 'data/parole.csv'
+    var stateCSV3 = 'data/probation.csv'
+    var stateData1, stateData2, stateData3, stateName;
+    $.get(stateCSV1, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-//                percentChange = data[i][data[i].length - 1];
+                percentChange1 = data[i][data[i].length - 1];
                 // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
-                stateData = _formatStateData(data[i]);
+                stateData1 = _formatStateData(data[i]);
             }
         }
-//        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
+    }
+        $.get(stateCSV2, function(csv) {
+        var data = _csvToArray(csv);
+        for (var i = 0; i < data.length; i++) {
+            if (data[i][1] == state) {
+                percentChange2 = data[i][data[i].length - 1];
+                stateData2 = _formatStateData(data[i]);
+            }
+        }
+    }
+        $.get(stateCSV3, function(csv) {
+        var data = _csvToArray(csv);
+        for (var i = 0; i < data.length; i++) {
+            if (data[i][1] == state) {
+                percentChange3 = data[i][data[i].length - 1];
+                stateData3 = _formatStateData(data[i]);
+            }
+        }
+    }
+           // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData);
-    });
+    );
 }
 
 function _appendPageTitles (stateName) {
@@ -325,14 +346,14 @@ function appendStateDescription (state) {
 // end bar chart
 
 // Line chart functions
-function _createAreaChart (stateName, stateData) {
+function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
     var myChart = Highcharts.chart('crime-rate-chart', {
         chart: {
             type: 'area'
         },
         title: {
-            text: 'Percentage of Prison Rearrests in  ' + stateName + ', 2004–2013'
+            text: 'Changes of  ' + stateName + '\'s prison, probation and parole population from 2005–2015'
         },
         xAxis: {
             categories: ['2005', '2006', '2007', '2008', '2009', '20010', '2011', '2012', '2013', '2014', '2015']
@@ -346,11 +367,24 @@ function _createAreaChart (stateName, stateData) {
             }
         },
         series: [{
-            name: stateName,
-            data: stateData,
+            name: "Prison Population",
+            data: stateData1,
             color: '#66ccff',
             fillOpacity: 1
-        }],
+        },
+        {
+            name: "Parole Population",
+            data: stateData2,
+            color: '#66ccff',
+            fillOpacity: 1
+        },
+        {
+            name: "Probation Population",
+            data: stateData3,
+            color: '#66ccff',
+            fillOpacity: 1
+        },
+        ],
     });
 }
 
@@ -394,7 +428,7 @@ function _createLineChart (stateName, stateData, title, chartId) {
              min: 0
         },
         series: [{
-            name: stateName,
+            name: "stateName",
             data: stateData
         }]
     });
