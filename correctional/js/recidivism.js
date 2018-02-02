@@ -57,9 +57,16 @@ function dashboardAssaultRate (state)  {
 // }
 
 // Area chart
-function dashboardAreaChart (state) {
-    var stateCSV = 'data/prison.csv';
+function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, stateData1 = undefined, stateData2 = undefined) {
+    // var stateCSV = 'data/prison.csv';
+    // var counter = 1
     var stateData1, stateName;
+    if (counter == 2) {
+        var stateData2 = []
+    };
+    if (counter == 3) {
+        var stateData2 = []
+    };
     $.get(stateCSV, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
@@ -67,12 +74,27 @@ function dashboardAreaChart (state) {
                 stateName = data[i][0];
 //                percentChange = data[i][data[i].length - 1];
                 // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
-                stateData1 = _formatStateData(data[i]);
+                if (counter == 1) {
+                    stateData1 = _formatStateData(data[i]);
+                };
+                if (counter == 2) {
+                    stateData2 = _formatStateData(data[i]);
+                };
+                if (counter == 3) {
+                    stateData3 = _formatStateData(data[i]);
+                };
             }
         }
 //        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
+        if (stateData2 == undefined ){ 
+            dashboardAreaChart (state, stateCSV, = 'data/parole.csv', counter = 2, stateData1, stateData2)
+        };
+        if (stateData3 == undefined ){ 
+            dashboardAreaChart (state, stateCSV, = 'data/probation.csv', counter = 3, stateData1, stateData2)
+        };
+
         _appendPageTitles(stateName);
-        _createAreaChart(stateName, stateData1);
+        _createAreaChart(stateName, stateData1, stateData2, stateData3);
     });
 }
 
