@@ -405,6 +405,7 @@ function _generateLineChartData (state, type) {
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
+                debugger;
 //                percentChange = data[i][data[i].length - 1];
                 data.splice(0, 2);
                 data = data.map(Number);
