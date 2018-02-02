@@ -58,44 +58,22 @@ function dashboardAssaultRate (state)  {
 
 // Area chart
 function dashboardAreaChart (state) {
-    var stateCSV1 = 'data/prison.csv';
-    var stateCSV2 = 'data/parole.csv'
-    var stateCSV3 = 'data/probation.csv'
-    var stateData1, stateData2, stateData3, stateName;
-    $.get(stateCSV1, function(stateCSV1) {
-        var data = _csvToArray(stateCSV1);
+    var stateCSV = 'data/prison.csv';
+    var stateData1, stateName;
+    $.get(stateCSV, function(csv) {
+        var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-                percentChange1 = data[i][data[i].length - 1];
+//                percentChange = data[i][data[i].length - 1];
                 // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 stateData1 = _formatStateData(data[i]);
-                debugger;
             }
         }
-    });
-        $.get(stateCSV2, function(stateCSV2) {
-        var data = _csvToArray(stateCSV2);
-        for (var i = 0; i < data.length; i++) {
-            if (data[i][1] == state) {
-                percentChange2 = data[i][data[i].length - 1];
-                stateData2 = _formatStateData(data[i]);
-            }
-        }
-    });
-        $.get(stateCSV3, function(stateCSV3) {
-        var data = _csvToArray(stateCSV3);
-        for (var i = 0; i < data.length; i++) {
-            if (data[i][1] == state) {
-                percentChange3 = data[i][data[i].length - 1];
-                stateData3 = _formatStateData(data[i]);
-            }
-        }
-    });
-           // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
+//        _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
-        _createAreaChart(stateName, stateData1, stateData2, stateData3);
-    
+        _createAreaChart(stateName, stateData1);
+    });
 }
 
 function _appendPageTitles (stateName) {
