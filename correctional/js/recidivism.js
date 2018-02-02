@@ -409,7 +409,7 @@ function _generateLineChartData (state, type) {
 //                percentChange = data[i][data[i].length - 1];
                 data[i].splice(0, 2);
                 data = data[i].map(Number);
-                stateData = data[i]
+                stateData = data
                 // stateData = _formatStateData(data[i]);
             }
         }
