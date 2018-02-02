@@ -231,7 +231,7 @@ function appendStateDescription (state) {
 
 function _createAreaChart (stateName, stateData1, stateData2, stateData3) {
     Highcharts.setOptions({lang: {noData: "No Data Available"}})
-    var myChart = Highcharts.chart('crime-rate-chart', {
+    var myChart = Highcharts.chart('population-chart', {
         chart: {
             type: 'area'
         },
