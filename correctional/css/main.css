@@ -13,12 +13,29 @@
   padding: 30px;
 }
 
-.percent-change {
+.percent-change-top {
   position: absolute;
-  top: 42%;
-  left: 70%;
+  top: 22%;
+  left: 80%;
   font-size: 36px;
   font-weight: bold;
+  color:#00008b;
+}
+.percent-change-middle {
+  position: absolute;
+  top: 32%;
+  left: 80%;
+  font-size: 36px;
+  font-weight: bold;
+  color:#0099ff;
+}
+.percent-change-bot {
+  position: absolute;
+  top: 42%;
+  left: 80%;
+  font-size: 36px;
+  font-weight: bold;
+  color:#66ccff;
 }
 
 .center-text {

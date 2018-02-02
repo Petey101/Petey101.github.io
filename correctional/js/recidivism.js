@@ -52,9 +52,9 @@ function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
 
-// function _appendPercentChange (id, percentChange) {
-//    $(id).text(percentChange);
-// }
+function _appendPercentChange (id, percentChange) {
+   $(id).text(percentChange);
+}
 
 // Area chart
 function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, stateData1 = undefined, stateData2 = undefined) {
@@ -72,16 +72,22 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
-//                percentChange = data[i][data[i].length - 1];
+               percentChange = data[i][data[i].length - 1];
                 // increaseOrDecline = parseFloat(data[i][data[i].length - 1]) > 0 ? 'increased' : 'declined';
                 if (counter == 1) {
+                    percentChange = data[i][data[i].length - 1];
                     stateData1 = _formatStateData(data[i]);
+                    _appendPercentChange('#prison-population-change', percentChange);
                 };
                 if (counter == 2) {
+                    percentChange = data[i][data[i].length - 1];
                     stateData2 = _formatStateData(data[i]);
+                    _appendPercentChange('#parole-population-change', percentChange);
                 };
                 if (counter == 3) {
+                    percentChange = data[i][data[i].length - 1];
                     stateData3 = _formatStateData(data[i]);
+                    _appendPercentChange('#probation-population-percent-change', percentChange);
                 };
             }
         }
