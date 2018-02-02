@@ -64,7 +64,6 @@ function dashboardAreaChart (state) {
     var stateData1, stateData2, stateData3, stateName;
     $.get(stateCSV1, function(stateCSV1) {
         var data = _csvToArray(stateCSV1);
-        debugger;
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
@@ -92,6 +91,7 @@ function dashboardAreaChart (state) {
             }
         }
     });
+        debugger;
            // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData1, stateData2, stateData3);
