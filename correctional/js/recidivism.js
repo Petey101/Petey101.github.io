@@ -62,8 +62,8 @@ function dashboardAreaChart (state) {
     var stateCSV2 = 'data/parole.csv'
     var stateCSV3 = 'data/probation.csv'
     var stateData1, stateData2, stateData3, stateName;
-    $.get(stateCSV1, function(csv) {
-        var data = _csvToArray(csv);
+    $.get(stateCSV1, function(stateCSV1) {
+        var data = _csvToArray(stateCSV1);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 stateName = data[i][0];
@@ -73,8 +73,8 @@ function dashboardAreaChart (state) {
             }
         }
     });
-        $.get(stateCSV2, function(csv) {
-        var data = _csvToArray(csv);
+        $.get(stateCSV2, function(stateCSV2) {
+        var data = _csvToArray(stateCSV2);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 percentChange2 = data[i][data[i].length - 1];
@@ -82,8 +82,8 @@ function dashboardAreaChart (state) {
             }
         }
     });
-        $.get(stateCSV3, function(csv) {
-        var data = _csvToArray(csv);
+        $.get(stateCSV3, function(stateCSV3) {
+        var data = _csvToArray(stateCSV3);
         for (var i = 0; i < data.length; i++) {
             if (data[i][1] == state) {
                 percentChange3 = data[i][data[i].length - 1];
