@@ -52,7 +52,7 @@ function dashboardRobberyRate (state)  {
 function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
 }
-function dashboardProbationReincarceration (state)  {
+function dashboardProbationIncarceration (state)  {
     _generateLineChartData (state, 'Probation Incarceration', 'probation-incarceration');
 }
 
