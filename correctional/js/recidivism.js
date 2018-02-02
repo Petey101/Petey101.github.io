@@ -13,7 +13,7 @@ function _init(defaultState) {
 function _generateDashboards (state) {
     dashboardAreaChart(state);
     appendStateDescription(state);
-    dashboardPrisonReconviction(state);
+    dashboardSpending(state);
     // dashboardRapeRate(state);
     // dashboardRobberyRate(state);
     // dashboardAssaultRate(state);
