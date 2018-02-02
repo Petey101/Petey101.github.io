@@ -15,25 +15,25 @@
 
 .percent-change-top {
   position: absolute;
-  top: 12%;
+  top: 10%;
   left: 80%;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color:#00008b;
 }
 .percent-change-middle {
   position: absolute;
-  top: 25%;
+  top: 24%;
   left: 80%;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color:#0099ff;
 }
 .percent-change-bot {
   position: absolute;
-  top: 37%;
+  top: 38%;
   left: 80%;
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   color:#66ccff;
 }

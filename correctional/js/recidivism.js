@@ -13,10 +13,10 @@ function _init(defaultState) {
 function _generateDashboards (state) {
     dashboardAreaChart(state);
     appendStateDescription(state);
-    dashboardPrisonReconviction(state);
-    dashboardRapeRate(state);
-    dashboardRobberyRate(state);
-    dashboardAssaultRate(state);
+    // dashboardPrisonReconviction(state);
+    // dashboardRapeRate(state);
+    // dashboardRobberyRate(state);
+    // dashboardAssaultRate(state);
     // dashboardPopAreaBarCharts(state);
 }
 
@@ -36,21 +36,21 @@ function _generateDashboards (state) {
 //     });
 // }
 
-function dashboardPrisonReconviction(state) {
-    _generateLineChartData(state, 'Prison Reconviction', 'prison-reconviction');
-}
+// function dashboardPrisonReconviction(state) {
+//     _generateLineChartData(state, 'Prison Reconviction', 'prison-reconviction');
+// }
 
-function dashboardRapeRate (state) {
-    _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
-}
+// function dashboardRapeRate (state) {
+//     _generateLineChartData (state, 'Prison Reincarceration', 'prison-reincarceration');
+// }
 
-function dashboardRobberyRate (state)  {
-    _generateLineChartData (state, 'Probation Rearrest', 'probation-rearrest');
-}
+// function dashboardRobberyRate (state)  {
+//     _generateLineChartData (state, 'Probation Rearrest', 'probation-rearrest');
+// }
 
-function dashboardAssaultRate (state)  {
-    _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
-}
+// function dashboardAssaultRate (state)  {
+//     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
+// }
 
 function _appendPercentChange (id, percentChange) {
    $(id).text(percentChange);
