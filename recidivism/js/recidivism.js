@@ -17,6 +17,7 @@ function _generateDashboards (state) {
     dashboardRapeRate(state);
     dashboardRobberyRate(state);
     dashboardAssaultRate(state);
+    dashboardProbationReincarceration(state);
     // dashboardPopAreaBarCharts(state);
 }
 
@@ -50,6 +51,9 @@ function dashboardRobberyRate (state)  {
 
 function dashboardAssaultRate (state)  {
     _generateLineChartData (state, 'Probation Reconviction', 'probation-reconviction');
+}
+function dashboardProbationReincarceration (state)  {
+    _generateLineChartData (state, 'Probation Reincarceration', 'probation-reincarceration');
 }
 
 
@@ -349,8 +353,7 @@ function _createAreaChart (stateName, stateData) {
         series: [{
             name: stateName,
             data: stateData,
-            color: '#66ccff',
-            fillOpacity: 1
+            color: '#f05a22',
         }],
     });
 }
@@ -397,7 +400,8 @@ function _createLineChart (stateName, stateData, title, chartId) {
         },
         series: [{
             name: stateName,
-            data: stateData
+            data: stateData,
+            color: '#f05a22',
         }]
     });
 }
