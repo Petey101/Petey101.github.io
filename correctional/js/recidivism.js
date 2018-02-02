@@ -72,7 +72,7 @@ function dashboardAreaChart (state) {
                 stateData1 = _formatStateData(data[i]);
             }
         }
-    }
+    });
         $.get(stateCSV2, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
@@ -81,7 +81,7 @@ function dashboardAreaChart (state) {
                 stateData2 = _formatStateData(data[i]);
             }
         }
-    }
+    });
         $.get(stateCSV3, function(csv) {
         var data = _csvToArray(csv);
         for (var i = 0; i < data.length; i++) {
@@ -90,11 +90,11 @@ function dashboardAreaChart (state) {
                 stateData3 = _formatStateData(data[i]);
             }
         }
-    }
+    });
            // _appendPercentChange('#crime-rate-chart-percent-change', percentChange);
         _appendPageTitles(stateName);
         _createAreaChart(stateName, stateData);
-    );
+    
 }
 
 function _appendPageTitles (stateName) {
