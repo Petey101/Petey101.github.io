@@ -83,8 +83,8 @@ function dashboardAreaChart (state) {
 
 function _appendPageTitles (stateName) {
     $('#title').text(stateName + '\'s recidivism rates between 2004 and 2013.');
-    $('#category-title').text('Change in ' + stateName + '\'s population released from prison, 2004–2013')
-    $('#bar-chart-title').text('Change in ' + stateName + '\'s population starting probation, 2004–2013');
+    $('#prison-title').text('Percent Change in ' + stateName + '\'s prison recidivism, 2004–2013')
+    $('#probation-title').text('Percent Change in ' + stateName + '\'s probation recidivism, 2004–2013');
 }
 
 function appendStateDescription (state) {
@@ -337,7 +337,7 @@ function _createAreaChart (stateName, stateData) {
             type: 'column'
         },
         title: {
-            text: 'Percentage of Prison Rearrests in  ' + stateName + ', 2004–2013'
+            text: 'Prison Rearrest'
         },
         xAxis: {
             categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013']
