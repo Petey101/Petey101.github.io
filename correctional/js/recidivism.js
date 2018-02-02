@@ -107,8 +107,6 @@ function dashboardAreaChart (state, stateCSV = 'data/prison.csv', counter = 1, s
 
 function _appendPageTitles (stateName) {
     $('#title').text(stateName + '\'s Correctional Populations between 2005 and 2015.');
-    $('#category-title').text('Change in ' + stateName + '\'s Correctional Populations by Category, 2005–2015')
-    $('#bar-chart-title').text('Change in ' + stateName + '\'s Overall Violent Crime Rate (Incidents per 100,000 Residents) by Population Area, 2006–2016');
 }
 
 function appendStateDescription (state) {
@@ -424,6 +422,15 @@ function _createLineChart (stateName, stateData, chartId) {
         chart: {
             type: 'bar'
         },
+        plotOptions: {
+            column: {
+                colorByPoint: true
+            }
+        },
+        colors: [
+                '#fdb813',
+                '#f05a22'
+            ],        
         title: {
             text: 'Correctional spending of  ' + stateName + '.'
         },
@@ -440,7 +447,7 @@ function _createLineChart (stateName, stateData, chartId) {
              min: 0
         },
         series: [{
-            name: "stateName",
+            name: stateName,
             data: stateData
         }]
     });
